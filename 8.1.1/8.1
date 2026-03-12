@@ -1,0 +1,30 @@
+# Read dimension
+n = int(input("dimension: "))
+
+# Read first matrix
+print("first matrix:")
+A = []
+for i in range(n):
+    row = list(map(int, input().split()))
+    A.append(row)
+
+# Read second matrix
+print("second matrix:")
+B = []
+for i in range(n):
+    row = list(map(int, input().split()))
+    B.append(row)
+
+# Initialize result matrix
+result = [[0 for j in range(n)] for i in range(n)]
+
+# Matrix multiplication
+for i in range(n):
+    for j in range(n):
+        for k in range(n):
+            result[i][j] += A[i][k] * B[k][j]
+
+# Print result
+print("Resultant Matrix:")
+for i in range(n):
+    print(" ".join(map(str, result[i])))
