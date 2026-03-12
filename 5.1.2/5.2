@@ -1,0 +1,25 @@
+# Input: four space-separated integers
+m1, m2, m3, m4 = map(int, input().split())
+
+# Calculate total marks
+total = m1 + m2 + m3 + m4
+
+# Calculate aggregate percentage
+aggregate = total / 4
+
+# Print total and aggregate (2 decimal places)
+print(total)
+print(f"{aggregate:.2f}")
+
+# Determine grade
+if aggregate >= 75:
+    print("Distinction")
+elif aggregate >= 60:
+    print("First Division")
+elif aggregate >= 50:
+    print("Second Division")
+elif aggregate >= 40:
+    print("Third Division")
+else:
+    print("Fail")
+
