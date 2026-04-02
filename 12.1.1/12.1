@@ -1,0 +1,18 @@
+n = int(input())
+ph = {}
+
+for i in range(n):
+    cmd = input().split()
+    
+    if cmd[0] == "ADD":
+        ph[cmd[1]] = cmd[2]   # name -> phone
+    
+    elif cmd[0] == "REMOVE":
+        ph.pop(cmd[1], None)  # safely remove
+    
+    elif cmd[0] == "DISPLAY":
+        if not ph:
+            print("No contacts")
+        else:
+            for name in sorted(ph):
+                print(f"{name}: {ph[name]}")
